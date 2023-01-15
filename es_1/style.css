@@ -1,0 +1,367 @@
+body {
+    margin:0px;
+    padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigationbar {
+  overflow: hidden;
+	background-color: black;
+  /*margin-bottom: 0px;*/
+}
+
+/*.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+  
+  *{
+    box-sizing: border-box;
+  }
+
+/* Styling the top navigation bar*/
+.navigationbar a {
+  display: block;
+  float: left;
+  font-size: 15px;
+  color: #A8A8A8;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;  
+}
+
+.navigationbar a.current{
+    color: gainsboro;
+  } 
+  
+  
+/* Styling the dropdown of the navigation bar*/  
+.navigationbar .dropdown{
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 15px;  
+  border: none;
+  outline: none;
+  color: #A8A8A8;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navigationbar a:hover, .dropdown:hover .dropbtn {
+  color: gainsboro;
+}
+
+.navigationbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: -1px;
+}
+
+.navigationbar .dropdown-content a {
+  float: none;
+  color: #A8A8A8;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navigationbar .dropdown-content a:hover {
+  background-color: #404040;
+}
+
+.navigationbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+/* Styling the right form */
+.navigationbar .menuDestra {
+  position: relative;
+  float: right;
+  overflow: hidden;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+
+.navigationbar input[type=text] {
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 150px;
+  height: 30px;
+}
+
+.navigationbar .menuDestra button {
+  float: right;
+  margin-left: 3px;
+  margin-right: 16px;
+  background: #ddd;
+  border-radius: 7px;
+  width: 73px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+/* Styling the Hamburger Menu */
+.navigationbar .icon{
+  display:none;
+}
+
+/* Styling the Container */
+/* Contenitore con Sfondo */
+.container {
+  text-align:center;
+  top: 0;
+  margin-top: -54px;
+  overflow: hidden;
+}
+
+.container .contenitoreSfondo{
+  background-color: #1a8cff; 
+  width: 100%
+}
+
+.container .contenitoreSfondo h1{
+  padding-top: 30px;
+  font-size: 80px;
+  color: #99ccff;
+}
+
+.container .contenitoreSfondo p{
+  margin: 35px;
+  margin-top: -40px; 
+  font-size: 18px;
+  color: #99ccff;
+}
+
+.contenitoreSfondo button{
+    border: 1px solid #50C878;
+    border-radius: 10px;
+    background: #50C878;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 35px;
+    cursor: pointer;
+    
+  }
+
+
+
+/* Contenitore dei Quadrati */
+.flex-container {
+  padding-top: 26px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+
+/* Le tre colonne */
+.flex-container > div {
+  width: 100px;
+  margin:auto;
+  padding-right:300px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+/* I quadrati */
+.quadrati {
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border:1px solid #F0F0F0;
+}
+
+.quadrati:hover{
+  cursor: pointer;
+}
+
+/* Quadrati Responsive */
+.flex-containerRe{
+  display:none;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+
+}
+
+.flex-containerRe .columnRe{
+  margin: auto;
+}
+
+
+/* Modifico i contenitori ad apparizione al click di JavaScript */
+.containerTab{
+  text-align: left;
+  padding: 20px;
+  margin: 35px;
+}
+
+.closebtn {
+  float: right;
+  font-size: 35px;
+  cursor: pointer;
+} 
+
+/* Styling the footer */
+.footer{
+  padding-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color:#909090;
+}
+
+
+
+
+
+/* Responsive Part */
+@media screen and (max-width: 777px) {
+  .navigationbar a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .navigationbar .menuDestra {
+    display: none;
+  }
+  .navigationbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 777px) {
+  .navigationbar.responsive {position: relative;}
+  .navigationbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navigationbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .navigationbar.responsive .dropdown {float: none;}
+  .navigationbar.responsive .dropdown-content {position: relative;}
+  .navigationbar.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .navigationbar.responsive .menuDestra {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    }
+}
+  
+@media screen and (max-width: 777px) and (min-width: 649px) {
+  .navigationbar.responsive {position: relative;}
+  .navigationbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navigationbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }  
+.navigationbar.responsive .menuDestra  input[type=text]{
+    width: 530px;
+    }
+
+  .navigationbar.responsive .menuDestra button{
+      position: relative;
+      height: 35px;
+      width: 100px;
+      margin-bottom: 5px;
+      float: left;
+      }
+}
+
+@media screen and (max-width: 648px) and (min-width: 568px) {
+  .navigationbar.responsive .menuDestra  input[type=text]{
+      width: 450px;
+      }
+  
+    .navigationbar.responsive .menuDestra button{
+        position: relative;
+        height: 35px;
+        width: 100px;
+        margin-bottom: 5px;
+        float: left;
+        }
+  }
+
+@media screen and (max-width: 568px) and (min-width: 360px) {
+  .navigationbar.responsive .menuDestra  input[type=text]{
+      width: 240px;
+      }
+  
+    .navigationbar.responsive .menuDestra button{
+        position: relative;
+        height: 35px;
+        width: 100px;
+        margin-bottom: 5px;
+        float: left;
+        }
+        .container .contenitoreSfondo h1{
+          font-size: 60px;
+      }
+  }
+
+  @media screen and (max-width: 989px) {
+    .flex-containerRe {
+      display: block;
+    }
+    .flex-container {
+      display: none;
+    }
+  }
+
+
+
+
+/*989*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 767 */
+
+
+
+  
+
+
+  

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">   
+  <title> Progetto 1 </title>
+<!-- <link rel="icon" href="https://ristorante.rubik-technologies.com/it/images/logo.png" type="image/x-icon"> -->    
+<!-- Fare un logo per il titolo con Canvas -->
+</head>
+	<body>
+		<!-- Navbar -->
+		<nav>
+                <div class="navigationbar" id="myNavigationBar">
+                      <a href="#home" class="current">Home</a>
+                      <a href="#about">About</a>
+                      <a href="#products">Products</a>
+                      <div class="dropdown">
+                        <button class="dropbtn">Services
+                           <i class="fa fa-caret-down"></i>
+						</button>
+                        <div class="dropdown-content" id="hidden">
+                          <a href="#">Service 1</a>
+                          <a href="#">Service 2</a>
+                          <a href="#">Service 3</a>
+                        </div>
+					</div>
+				    <div class="menuDestra">
+					 <form>
+						<input type="text" name="search">
+						<button type="submit">Search</button>
+					 </form>
+				    </div>
+					   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                          <i class="fa fa-bars"></i>
+                       </a>
+			    </div> 	       
+	    </nav> 
+  
+
+	
+	<!-- Main Element -->
+	<main>
+		<div class="container">
+			<div class="contenitoreSfondo">
+				<div class="titolo">
+					<h1>Esempio1</h1>
+					<p class="sottotitoloprincipale">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+						 ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+				</div>
+		    <button type="button" onclick="alert('Benvenuto! Sei nella pagina Esempio1')">Click Me!</button>		
+			</div>
+		
+		     <div class="containerQuadrati">
+			   <div class="paragrafoInt">
+				<p style="font-size:30px;">Duis aute <span style="font-size:25px; color:#696969;">irure dolor</span></p>
+				<p style="font-size:15px; color:#909090; margin-top: -20px;">in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident<br>, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			   </div>
+			     <div class="flex-container">
+				    <div class="column">
+						<svg class="quadrati" onclick="openTab('b1');">
+						 <svg>
+						    <rect x="0" y="0" width="700" height="300" fill="#F0F0F0"/>
+							<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 1</text>
+						 </svg>
+					  </svg>
+					</div>
+				    <div class="column">
+					 <svg class="quadrati" onclick="openTab('b2');">
+						<svg>
+						   <rect x="0" y="0" width="700" height="300" fill="#1a8cff"/>
+						   <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 2</text>
+						</svg>
+					 </svg>
+					</div>
+				    <div class="column">
+						<svg class="quadrati" onclick="openTab('b3');">
+							<svg>
+							   <rect x="0" y="0" width="700" height="300" fill="#F0F0F0" />
+							   <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 3</text>
+							</svg>
+						 </svg>
+					 </div>
+			     </div>
+				 
+				 <!-- Container Quadrati per devices Responsive-->
+				 
+					  <div class="flex-containerRe">
+						 <div class="columnRe">
+							 <svg class="quadrati" onclick="openTabRe('b1re');" style="margin:auto; display: block;">
+							  <svg>
+								 <rect x="0" y="0" width="700" height="300" fill="#F0F0F0"/>
+								 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 1</text>
+							  </svg>
+						   </svg>
+						 </div>
+						</div>
+						<div class="flex-containerRe">
+						 <div class="columnRe">
+						  <svg class="quadrati" onclick="openTabRe('b2re');" style="margin:auto; display: block;">
+							 <svg>
+								<rect x="0" y="0" width="700" height="300" fill="#1a8cff"/>
+								<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 2</text>
+							 </svg>
+						  </svg>
+						 </div>
+						</div>
+						<div class="flex-containerRe">
+						 <div class="columnRe">
+							 <svg class="quadrati" onclick="openTabRe('b3re');" style="margin:auto; display: block;">
+								 <svg>
+									<rect x="0" y="0" width="700" height="300" fill="#F0F0F0" />
+									<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">BOX 3</text>
+								 </svg>
+							  </svg>
+						  </div>
+						</div>
+
+						 <!-- Paragrafi dei quadrati a sparizione al click (di default hidden) Responsive -->
+						 <div id="b1re" class="containerTab" style="display:none;background:#F0F0F0">
+							<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+							  <h2>Box 1</h2>
+							  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+						</div>
+		  
+						 <div id="b2re" class="containerTab" style="display:none;background:#1a8cff">
+							<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+							   <h2>Box 2</h2>
+							   <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+						 </div>
+		  
+						<div id="b3re" class="containerTab" style="display:none;background:#F0F0F0">
+						   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+							  <h2>Box 3</h2>
+							  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+						</div>
+					   
+		  
+	 	  
+	  	         <!-- Paragrafi dei quadrati a sparizione al click (di default hidden) -->
+                 <div id="b1" class="containerTab" style="display:none;background:#F0F0F0">
+	                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+	                  <h2>Box 1</h2>
+	                  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+                </div>
+  
+                 <div id="b2" class="containerTab" style="display:none;background:#1a8cff">
+	                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+	                   <h2>Box 2</h2>
+	                   <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+                 </div>
+  
+                <div id="b3" class="containerTab" style="display:none;background:#F0F0F0">
+	               <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+	                  <h2>Box 3</h2>
+	                  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+                </div>
+			</div> 
+		</div> 
+       <!-- Footer --> 
+	   <footer>
+	     <div class="footer">
+		 <p>Copyright © 2023 Powerded by:<span> <a href="https://github.com/elisaravagnann" target="_blank">Elisa</span></a></p>
+		 </div>
+	   </footer> 
+		<script type='text/javascript' src='script.js'></script>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+	</body> 
+</html>
