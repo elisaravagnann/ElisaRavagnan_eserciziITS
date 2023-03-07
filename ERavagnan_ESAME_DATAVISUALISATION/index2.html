@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Bar Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+  </head>
+  <body>
+    <div id="container" style="width: 1000px; height: 1000px; margin:auto;" ></div>
+    <script>
+      anychart.onDocumentReady(function() {
+
+ 
+        // set the data
+        var data = {
+            header: ["Food", "Total Emissions"],
+            rows: [
+              ["Wheat & Rye (Bread)", 1.4],
+              ["Maize", 1.1],
+              ["Barley", 1.1],
+              ["Oatmeal", 1.6],
+              ["Rice", 4.0],
+              ["Potatoes", 0.3],
+              ["Cassava", 0,9],
+              ["Cane Sugar", 6.2],
+              ["Beet Sugar", 2.6],
+              ["Other Pulses", 1.4],
+              /*["Peas", 1.6],
+              ["Nuts", 0.8],
+              ["Groundnuts", 0.2],
+              ["Soymilk", 2.4],
+              ["Tofu", 1.0],
+              ["S-Oil", 3.0],
+              ["P-Oil", 6.0],
+              ["S-Oil", 7.6],
+              ["R-Oil", 3.5],
+              ["O-Oil", 3.7],
+              ["Tomatoes", 6.0],
+              ["O&_", 1.4],
+              ["R-Vegetables", 0.3],
+              ["Brassicas", 0.4],
+              ["O-Vegetables", 0.5],
+              ["C-Fruit", 0.3],
+              ["Bananas", 0.8],
+              ["Apples", 0.3],
+              ["B&G", 1.1],
+              ["Wine", 1.4],
+              ["Other Fruit", 0.7],
+              ["Coffee", 16.5],
+              ["D-Chocolate", 18.7],
+              ["Beef-b", 59.6],
+              ["Beef-d", 21.1],
+              ["L&M", 24.5],
+              ["PigMeat", 7.2],
+              ["PoultryMeat", 6.1],
+              ["Cheese", 2.8], 
+              ["Eggs", 21.2],
+              ["Fish", 4.5],
+              ["Shrimps", 11.8]*/   
+            ]};
+ 
+        // create the chart
+        var chart = anychart.column();
+ 
+        // add the data
+        chart.data(data);
+ 
+        // set the chart title
+        chart.title("The Foods Total Emissions ");
+ 
+        // draw
+        anychart.color.lighten("#FF0000", 0.2)
+        chart.container("container");
+        chart.draw();
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
