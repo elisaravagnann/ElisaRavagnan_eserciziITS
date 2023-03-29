@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}Recensioni{% endblock %}
+
+{% block content %}
+<main>
+  <h1>Le Recensioni dei Nostri Clienti</h1>
+  <div class="container" id="containerRE">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col">
+
+      </div>
+    </div>
+    {% for review in reviews %}
+    <div class="row" style="margin-top:-40px;">
+      <div class="col-2" style="padding-top:32px;">
+        <div class="review-user" style="margin-top:6px;">{{ review.user.username }}</div>
+      </div>
+      <div class="col">
+        <div class="review-body">
+          <div class="review-header">
+            <span class="soddisfazione" style="font-weight: bold;">Soddisfazione {{ review.stars }}/5</span>
+           </div>
+          <p>{{ review.text }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  
+
+  {% if current_user.is_authenticated %}
+  <h2 style="text-align:left;">Scrivi la tua recensione</h2>
+  <form action="{{ url_for('submit_review') }}" method="post">
+    <div class="form-group">
+      <label for="stars">Soddisfazione (1-5):</label>
+      <input type="number" name="stars" min="1" max="5" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="text">Recensione:</label>
+      <textarea name="text" rows="4" cols="50" class="form-control" required></textarea>
+    </div>
+    <button type="submit"  class="btn btn-lg" style ="background-color: #A0A0A0; color:white !important;">Invia</button>
+  </form>  
+  {% else %}
+  <p><a href="{{ url_for('login') }}">Accedi</a> o <a href="{{ url_for('register') }}">Registrati</a> per scrivere una recensione</p>
+  {% endif %}
+</main>
+
+<script>
+  $(document).ready(function() {
+  $('div.review-header span.soddisfazione').each(function() {
+    if ($(this).text() === 'Soddisfazione 1/5') {
+      $(this).addClass('soddisfazione-rossa');
+    }
+  });
+});
+
+</script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

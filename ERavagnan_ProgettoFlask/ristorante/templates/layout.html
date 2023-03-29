@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- File CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Libreria JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    
+    <!-- Libreria Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+    
+    <title>{% block title %}Ristorante Italiano{% endblock %}</title>
+</head>
+<body>
+
+
+{% block navbar %}
+<!-- Navbar -->    
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Logo -->
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+        <div class="logo">
+          <!--<link rel="icon" href="https://ristorante.rubik-technologies.com/it/ristorante/static/images/logo.png" type="image/x-icon">-->
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="60px" height="auto" style="vertical-align:middle;padding-right:3px;">
+          <span>Ristorante Italiano</span>
+        </div>
+    </a>
+    
+    <!-- Bottone Toggler per la parte Responsive-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- I campi della navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#container1">Ristorante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#container2">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#container4">Recensioni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#container5">Dove Siamo</a>
+        </li>
+      {% if current_user.is_authenticated %}
+          <li class="nav-item" style="padding-top: 10px; font-size:15px;">
+            <a class="nav-link" href="#">{{ current_user.username }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}"><button class="nav-link-btn" style="margin-left:5px;">Logout</button></a>
+          </li>
+      {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}"> <button class="nav-link-btn" style="margin-left:5px;">Login</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('register') }}"><button class="nav-link-btn">Registrati</button></a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </nav>
+</header>
+{% endblock %}
+
+
+<div class="content">
+{% block content %}{% endblock %}
+</div>
+               
+
+
+
+<footer>
+    {% block footer %}
+        <p style="text-align:center; padding-top:20px;">&copy; 2023 Il Ristorante Italiano. Tutti i diritti riservati.</p>
+    {% endblock %}
+</footer>
+
+
+<!-- Bootstrap and Popper.js -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<main>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-4 p-4 rounded bg-light">
+      <h3>Fai il Login nel nostro Sito!</h3>
+      <form action="{{ url_for('login') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          {{ form.username.label(class="form-control-label") }}
+          {% if form.username.errors %}
+            {% for error in form.username.errors %}
+              <span class="form-text text-danger">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+          {{ form.username(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label(class="form-control-label") }}
+          {% if form.password.errors %}
+            {% for error in form.password.errors %}
+              <span class="form-text text-danger">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+          {{ form.password(class="form-control form-control-lg") }}
+        </div>
+        <button type="submit" class="btn btn-lg" style ="background-color: #A0A0A0; color:white !important;">{{ _('Accedi') }}</button>
+      </form>
+      <hr>
+      <p>{{ _('Non hai ancora un account?') }} <a href="{{ url_for('register') }}">{{ _('Registrati') }}</a></p>
+      <p><a href="{{ url_for('home') }}">Torna alla Home</a></p>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}

@@ -1,0 +1,320 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-success" role="alert" id="success-alert">
+      {{ messages[0] }}
+    </div>
+    <script>
+      setTimeout(function() {
+        document.querySelector('#success-alert').style.display = 'none';
+      }, 1000); // cambia il valore "1000" con il numero di millisecondi dopo i quali vuoi che l'alert scompaia
+    </script>
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+  <main>
+  <!-- Carousel Slides -->  
+  <div class="bd-example"> 
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='images/slider1.jpg') }}" class="d-block w-100" alt="Slider1">
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/slider2.jpg') }}" class="d-block w-100" alt="Slider2">
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/slider3.jpg') }}" class="d-block w-100" alt="Slider3">
+        </div>
+      </div>
+   
+       <div class="carousel-caption d-none d-md-block d-flex justify-content-center align-items-center">
+            <h5>Benvenuto!</h5>
+       </div>
+      
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contenitore 1: Il nostro Ristorante-->
+  <div class="contenuti">
+    
+    <div class="container" id="container1">
+      <div class="row">
+        <div class="col-12" id="ristorante">
+          <h2>~ Il Ristorante ~</h2>
+        </div>
+      </div>
+      <div class="row" style="padding-top:20px;">
+        <div class="col">
+          <p style="font-size:27px;">Ambienti</p>
+          <p style="font-size:15px;">Siamo l'ultimo autentico ristorante
+            italiano a Mestre, serviamo piatti italiani deliziosi con i migliori
+            chefs. In qualche minuto, navigando nel nostro sito scoprirai i nostri
+            menu. Speriamo che verrai presto a trovarci per godere di una superba
+            esperienza culinaria italiana.</p>
+            <p style="font-size:27px;">Una esperienza unica</p>
+            <p style="font-size:15px;">Siamo l'ultimo
+            autentico ristorante italiano a Mestre, serviamo piatti italiani
+            deliziosi con i migliori chefs. In qualche minuto, navigando nel
+            nostro sito scoprirai i nostri menu. Speriamo che verrai presto a
+            trovarci per godere di una superba esperienza culinaria italiana.</p>
+        </div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='images/location.jpg') }}" class="d-block w-100" alt="Location">
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <img src="{{ url_for('static', filename='images/cuisine.jpg') }}" class="d-block w-100" alt="Location">
+        </div>
+        <div class="col">
+          <p style="font-size:27px;">Cucina</p>
+          <p style="font-size:15px;">Siamo l'ultimo autentico ristorante
+            italiano a Mestre, serviamo piatti italiani deliziosi con i migliori
+            chefs. In qualche minuto, navigando nel nostro sito scoprirai i nostri
+            menu. Speriamo che verrai presto a trovarci per godere di una superba
+            esperienza culinaria italiana.</p>
+            <p style="font-size:27px;">Una esperienza unica</p>
+            <p style="font-size:15px;">Siamo l'ultimo
+            autentico ristorante italiano a Mestre, serviamo piatti italiani
+            deliziosi con i migliori chefs. In qualche minuto, navigando nel
+            nostro sito scoprirai i nostri menu. Speriamo che verrai presto a
+            trovarci per godere di una superba esperienza culinaria italiana.</p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenitore 2: Il Menu -->
+    <div class="container" id="container2">
+      <div class="row">
+        <div class="col-12" id="menu">
+          <h2>~ Il Menu ~</h2>
+        </div>
+      </div>
+      <div class="row" style="padding-top:20px;">
+        <div class="col">
+          <div class="immmagine-menu">
+            <img src="{{ url_for('static', filename='images/meat-menu.jpg') }}" class="d-block w-100 rounded-top" alt="Meat Menu">  
+          </div>
+          <div class="contenuto">
+            <div class="paragrafo rounded-bottom">
+              <p style="font-size:23px;">Menu di Carne</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Bocconcini di carne in nido di sfoglia</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Bruschette con maiale al curry</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Uova al prosciutto</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Vitello tonnato</p>
+              <hr class="hr">
+              <p style="font-size:13px; padding-bottom:20px;">Fesa di tacchino marinata con olive</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div class="immmagine-menu">
+            <img src="{{ url_for('static', filename='images/fish-menu.jpg') }}" class="d-block w-100 rounded-top" alt="Fish Menu">  
+          </div>
+          <div class="contenuto">
+            <div class="paragrafo rounded-bottom">
+              <p style="font-size:23px;">Menu di Pesce</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Carpaccio di polpo</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Cozze al verde</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Cocktail di gamberi</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Risotto alla crema di scampi</p>
+              <hr class="hr">
+              <p style="font-size:13px; padding-bottom:20px;">Ravioli di pesce com crema di scampi</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div class="immmagine-menu">
+            <img src="{{ url_for('static', filename='images/menu-vegetarian.jpg') }}" class="d-block w-100 rounded-top" alt="Vegetarian Menu">  
+          </div>
+          <div class="contenuto">
+            <div class="paragrafo rounded-bottom">
+              <p style="font-size:23px;">Menu Vegetariano</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Parmigiana di melanzane</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Strudel con ricotta e spinaci</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Polpette di spinaci e ricotta</p>
+              <hr class="hr">
+              <p style="font-size:13px;">Frittata di patate al forno</p>
+              <hr class="hr">
+              <p style="font-size:13px; padding-bottom:20px;">Spaghetti con polpettine vegetariane</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--Contenitore 3: Orari d'Apertura --> 
+<div class="container" id="container3">
+  <div class="row">
+    <div class="col-12">
+      <h2>~ Orari d'Apertura ~</h2>
+    </div>
+  </div>
+  
+  <div class="container" style="padding-top:20px;">
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity:0.5;"></div>
+      <div class="content" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);">
+        <p style="font-size:25px; color: #505050;">Orari</p>
+     </div>
+    <div class="row">
+      <div class="col" style="color: #505050;">
+        <p style="font-size:25px; position: absolute; top: 130px; left: 50%; transform: translate(-50%, -50%);">Pranzo</p>
+        <p style="font-size:25px; position: absolute; top: 157px; left: 50%; transform: translate(-50%, -50%);">12:00 - 15:00</p>
+      </div>
+      <div class="col" style="color: #505050;">
+        <p style="font-size:25px; position: absolute; top: 130px; left: 50%; transform: translate(-50%, -50%);">Cena</p>
+        <p style="font-size:25px; position: absolute; top: 157px; left: 50%; transform: translate(-50%, -50%);">19:30 - 23:30</p>
+      </div>
+    </div>
+ </div>
+</div>
+
+
+<!--Contenitore 4: Le Nostre Migliori Recensioni --> 
+<div class="container" id="container4">
+  {% if current_user.is_authenticated %}
+  <div class="row">
+    <div class="col-12">
+      <h2>~ Lasciaci una recensione ~</h2>
+    </div>
+  </div>
+  <div class="container bg-light" style="padding-top:20px;" id="re">
+    <div class="content" style="text-align:center; padding-top:15px; font-size:18px;">
+        <p>Da questo link puoi leggere o lasciarci una <a href="{{ url_for('reviews') }}">Recensione</a></p>
+        <p>Per noi è molto importante la tua opinione, per migliorare sempre di più in fatto di qualità dei nostri prodotti e servizi</p>
+      </div>
+   </div>
+  
+   {% else %}
+   <div class="row">
+    <div class="col-12">
+      <h2>~ Le nostre migliori Recensioni ~</h2>
+    </div>
+  </div> 
+   <div class="container bg-light" style="padding-top:20px;" id="re">
+    <div class="content" style="padding-top:15px; font-size:18px; text-align:center;" id="re">
+        <div class="row" style="padding-top:20px;">
+          <div class="col-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <p class="utente">
+              elisa
+            </p>
+            <p class="recensione">
+              Non avrei potuto chiedere di meglio dal mio pranzo presso questo ristorante. Il servizio era impeccabile e il cibo era delizioso. Ho particolarmente apprezzato il piatto di spaghetti con le polpette vegetali, che era perfettamente cucinato. Il mio compagno ha scelto il vitello tonnato, che si è rivelato tenero e succoso. Inoltre, il locale è molto accogliente e ben arredato. Consiglio vivamente questo posto a chiunque cerchi un'esperienza culinaria eccezionale!
+            </p>
+          </div>
+          
+          <div class="col-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <p class="utente">
+              ciao2
+            </p>
+            <p class="recensione">
+              Non posso che elogiare questo ristorante! Ho provato diversi piatti dal menù e tutti erano semplicemente deliziosi. L'ambiente è molto accogliente e il personale è sempre disponibile e attento alle esigenze dei clienti. Inoltre, il rapporto qualità-prezzo è eccellente. Consiglio vivamente questo ristorante a tutti gli amanti della buona cucina!
+            </p>
+          </div>
+          
+          <div class="col-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+            <p class="utente">
+              ciao3
+            </p>
+            <p class="recensione">
+              Il mio soggiorno in questo ristorante è stato eccezionale! Il cibo era delizioso e il servizio era impeccabile. L'atmosfera era rilassante e piacevole, rendendo l'esperienza di mangiare qui ancora più memorabile. Consiglio vivamente questo posto a chiunque cerchi un'esperienza culinaria di alta qualità.
+            </p>
+          </div>
+        </div>
+      </div>
+        
+        <p style="text-align:center;"><a href="{{ url_for('login') }}">Accedi</a> o <a href="{{ url_for('register') }}">Registrati</a></p>
+        <p style="padding-bottom:30px; text-align:center;">Per poter leggere le nostre Recensioni o per scriverne una!</p>
+      </div>
+    {% endif %}
+  </div>
+
+
+
+<!--Contenitore 5: Dove ci troviamo--> 
+<div class="container" id="container5">
+  <div class="row">
+    <div class="col-12" id="dv">
+      <h2>~ Vieni a trovarci ~</h2>
+    </div>
+  </div>
+  <div class="container" style="padding-top:20px;" id="indirizzo">
+    <div class="row">
+      <div class="col-md-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44758.16339437737!2d12.199813687554412!3d45.48218707972195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb5b9efe534a5%3A0x8dd132587294315c!2sRistorante%20Montenapoleone%20Mestre!5e0!3m2!1sit!2sit!4v1600338235236!5m2!1sit!2sit" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="col-md-6">
+        <span style="font-size:25px;">Indirizzo:</span><br>
+        <span>Via Ca' Marcello,6,30172 Venezia</span><br><br>
+        <span style="font-size:25px;">Numero da chiamare per prenotazione:</span><br>
+        <span>1234567890</span><br><br>
+      </div>
+    </div>
+   </div>
+</div>
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+</main>
+{% endblock %}
